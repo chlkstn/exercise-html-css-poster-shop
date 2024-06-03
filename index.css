@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+}
+
+header {
+  box-sizing: border-box;
+  display: grid;
+
+  background-color: rgb(47, 255, 127);
+  height: 30rem;
+  margin: 0;
+  border: 0;
+}
+
+header img {
+  align-self: end;
+  justify-self: center;
+}
+
+header h1 {
+  justify-self: center;
+  align-self: center;
+  font-size: 5rem;
+}
+
+.card {
+  width: 25em;
+  color: white;
+}
+
+.card img {
+  width: 25em;
+}
+
+.card button {
+  background-color: rgb(248, 98, 155);
+}
