@@ -8,15 +8,13 @@ body {
 
   background-color: black;
   margin: 0;
-  
-
-  
 }
 
 header {
   box-sizing: border-box;
   display: grid;
-  grid-column: 1;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto;
 
   background-color: rgb(47, 255, 127);
   height: 30rem;
@@ -24,21 +22,30 @@ header {
   border: none;
 }
 
-header img {
+#ninja {
   align-self: end;
   justify-self: center;
+  grid-column: 2;
+  grid-row: 3;
 }
 
 header h1 {
   justify-self: center;
+  font-weight: 900;
   align-self: center;
   font-size: 5rem;
+  grid-column: 2;
+  grid-row: 2;
+}
+
+#navcon {
+  grid-column: 1;
+  margin: 1.5rem;
 }
 
 .card {
   width: 24rem;
   color: white;
-  border: solid red;
 }
 
 .card p {
@@ -137,7 +144,28 @@ main {
 
 footer {
   display: grid;
-  grid-template-columns: 33fr 33fr 33fr;
   justify-content: center;
-  
-} 
+}
+
+.footer_content {
+  display: grid;
+  grid-template-columns: 33fr 33fr 33fr;
+
+  row-gap: 2rem;
+  column-gap: 2rem;
+  width: 72rem;
+  color: white;
+}
+
+.footer_content ul {
+  list-style: none;
+}
+
+.footer_content li {
+  margin-bottom: 0.4rem;
+}
+
+.footer_content a {
+  color: white;
+  text-decoration-line: none;
+}
