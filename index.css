@@ -3,16 +3,25 @@
 }
 
 body {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+
+  background-color: black;
+  margin: 0;
+  
+
+  
 }
 
 header {
   box-sizing: border-box;
   display: grid;
+  grid-column: 1;
 
   background-color: rgb(47, 255, 127);
   height: 30rem;
-  margin: 0;
-  border: 0;
+
+  border: none;
 }
 
 header img {
@@ -27,14 +36,108 @@ header h1 {
 }
 
 .card {
-  width: 25em;
+  width: 24rem;
   color: white;
+  border: solid red;
+}
+
+.card p {
+  font-size: 1.2rem;
 }
 
 .card img {
-  width: 25em;
+  width: 24rem;
+}
+
+.card h1 {
+  font-size: 2.5rem;
+  margin-top: 0.75rem;
 }
 
 .card button {
-  background-color: rgb(248, 98, 155);
+  display: flex;
+  background-color: rgb(252, 81, 146);
+  height: 2rem;
+  padding: 1rem;
+  border-radius: 0.4rem;
+  border-style: none;
+  color: white;
+  font-weight: 600;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
+
+.cardLarge {
+  width: 36rem;
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  padding-bottom: 0.05em;
+}
+
+.cardLarge p {
+  font-size: 1.2rem;
+  margin-left: 1rem;
+  margin-top: 0.3rem;
+}
+
+.cardLarge img {
+  width: 36rem;
+}
+
+.cardLarge h1 {
+  font-size: 2rem;
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+  margin-left: 1rem;
+  font-weight: 700;
+}
+
+.cardLarge button {
+  display: flex;
+  background-color: rgb(252, 81, 146);
+  height: 4em;
+  padding: 2rem 3rem 2rem 3rem;
+  border-radius: 0.4rem;
+  border-style: none;
+  color: white;
+  font-weight: 600;
+  align-items: center;
+  margin-top: 5em;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+footer {
+  height: 300px;
+  background-color: rgb(82, 82, 82);
+}
+
+main {
+  display: grid;
+  justify-content: center;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 33fr 33fr 33fr;
+  grid-template-rows: 33fr 33fr 33fr;
+  row-gap: 2rem;
+  column-gap: 2rem;
+  margin: 8rem auto 8rem auto;
+  background-color: rgb(0, 0, 0);
+}
+
+.galleryLarge {
+  display: grid;
+  grid-template-columns: 50fr 50fr;
+  column-gap: 2rem;
+  margin-bottom: 8rem;
+}
+
+footer {
+  display: grid;
+  grid-template-columns: 33fr 33fr 33fr;
+  justify-content: center;
+  
+} 
