@@ -9,59 +9,84 @@ body {
   margin: 0;
 }
 
+.main_store {
+  display: grid;
+
+  grid-template-columns: 10fr 20fr 20fr 20fr 10fr;
+  grid-template-rows: 10fr 80fr 10fr;
+  grid-template-areas:
+    "header header header header header"
+    ". gallery gallery gallery ."
+    "footer footer footer footer footer";
+
+  margin: 0;
+  row-gap: 8rem;
+  justify-content: center;
+}
+
+/*
+Header
+*/
 header {
-  box-sizing: border-box;
   display: grid;
   grid-template-columns: 33fr 33fr 33fr;
   grid-template-rows: auto auto auto;
 
   background-color: rgb(47, 255, 127);
 
-  border: none;
   grid-area: header;
 }
 
-main {
-  display: grid;
-  justify-content: center;
-  grid-template-columns: 10fr 27fr 27fr 27fr 10fr;
-  grid-template-rows: auto auto auto auto;
-  grid-template-areas:
-    "header header header header header"
-    ". gallery gallery gallery . "
-    ". galleryL galleryL galleryL ."
-    " footer footer footer footer footer";
-
-  gap: 4rem;
+header h1 {
+  justify-self: center;
+  font-weight: 900;
+  align-self: center;
+  font-size: 5rem;
+  grid-column: 2;
+  grid-row: 2;
 }
+
+#ninja {
+  align-self: end;
+  justify-self: center;
+  grid-column: 2;
+  grid-row: 3;
+}
+
+#navcon {
+  grid-column: 1;
+  margin: 1.5;
+}
+
+/*
+Gallery Grid
+*/
 
 .gallery {
   display: grid;
-  grid-template-columns: 33% 33% 33%;
-  grid-template-rows: 25% 25% 25% auto;
+  grid-template-columns: 16.5% 16.5% 16.5% 16.5% 16.5% 16.5%;
+  grid-template-rows: auto auto auto auto;
   row-gap: 4rem;
   column-gap: 2rem;
   margin: 0;
   background-color: rgb(0, 0, 0);
   grid-area: gallery;
-
-  align-items: stretch;
+  justify-content: center;
 }
 
-.galleryLarge {
-  display: grid;
-  grid-template-columns: 50fr 50fr;
-  column-gap: 2rem;
-  margin-bottom: 8rem;
-  grid-area: galleryL;
-}
+/*
+Card
+*/
 
 .card {
   color: white;
+  grid-column-start: span 2;
+  max-width: 100%;
 }
 
 .card img {
-  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
 }
 
 .card p {
@@ -87,36 +112,13 @@ main {
   text-align: center;
 }
 
+/*
+Footer
+*/
+
 footer {
   height: 300fr;
   background-color: rgb(82, 82, 82);
-  grid-area: footer;
-}
-
-#ninja {
-  align-self: end;
-  justify-self: center;
-  grid-column: 2;
-  grid-row: 3;
-}
-
-header h1 {
-  justify-self: center;
-  font-weight: 900;
-  align-self: center;
-  font-size: 5rem;
-  grid-column: 2;
-  grid-row: 2;
-}
-
-#navcon {
-  grid-column: 1;
-  margin: 1.5;
-}
-
-footer {
-  display: grid;
-  justify-content: center;
   grid-area: footer;
 }
 
@@ -126,9 +128,10 @@ footer {
 
   row-gap: 2rem;
   column-gap: 2rem;
-  width: auto;
+  width: 80fr;
   color: white;
   margin-top: 2rem;
+  margin-left: 7%;
 }
 
 .footer_content ul {
@@ -144,26 +147,59 @@ footer {
   text-decoration-line: none;
 }
 
+/*
+
+Checkout_page
+
+
+*/
+
+.main_checkout {
+  display: grid;
+  grid-template-columns: 10fr 20fr 20fr 20fr 10fr;
+  grid-template-rows: 10fr auto 10fr;
+  grid-template-areas:
+    "header header header header header"
+    ". gallery_checkout gallery_checkout gallery_checkout ."
+    "footer footer footer footer footer";
+
+  margin: 0;
+  row-gap: 8rem;
+  justify-content: center;
+}
+
+.gallery_checkout {
+  display: grid;
+  grid-template-columns: 16.5% 16.5% 16.5% 16.5% 16.5% 16.5%;
+  grid-template-rows: auto auto auto;
+  column-gap: 2rem;
+  margin-bottom: 8rem;
+  grid-area: gallery_checkout;
+  justify-content: center;
+}
+
 .checkout {
   display: grid;
   color: white;
   grid-template-columns: 33% 33% 33%;
   grid-template-rows: auto auto auto 1px auto auto;
   font-size: 2rem;
+  grid-column-start: span 6;
+  margin-top: 8rem;
 }
 
 .checkout button {
   background-color: rgb(252, 81, 146);
   color: white;
   font-weight: 600;
-  height: 4rem;
-  padding: 0.5rem 1rem 0.5rem 1rem;
+  height: auto;
+  padding: 1.5rem 1rem 1.5rem 1rem;
   border-radius: 0.4rem;
   max-width: fit-content;
 
   text-align: center;
   grid-column: 3;
-  grid-row: 5;
+  grid-row: 6;
   justify-self: right;
   font-size: 1.5rem;
   margin-top: 6rem;
@@ -201,18 +237,21 @@ footer {
   background-color: aliceblue;
 }
 
-#vit {
-  margin-top: 8rem;
+#varor {
+  margin-top: 7rem;
   margin-bottom: 4rem;
-  color: white;
+  color: rgb(255, 255, 255);
   font-size: 3rem;
+  grid-column-start: span 6;
 }
 
 .cardLarge {
-  width: 50%;
   color: rgb(0, 0, 0);
   background-color: rgb(255, 255, 255);
   padding-bottom: 0.05em;
+  grid-column-start: span 3;
+  max-width: 100%;
+  object-fit: cover;
 }
 
 .cardLarge p {
@@ -222,7 +261,8 @@ footer {
 }
 
 .cardLarge img {
-  width: 50%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .cardLarge h1 {
@@ -236,7 +276,7 @@ footer {
 .cardLarge button {
   display: flex;
   background-color: rgb(252, 81, 146);
-  height: 4em;
+  height: 4ema;
   padding: 2rem 3rem 2rem 3rem;
   border-radius: 0.4rem;
   border-style: none;
@@ -248,8 +288,12 @@ footer {
   margin-bottom: 1rem;
 }
 
+/*
+Media queries
+*/
+
 @media only screen and (max-width: 768px) {
-  main {
+  .main_store {
     display: grid;
     justify-content: center;
     grid-template-columns: 10fr 80fr 10fr;
@@ -259,7 +303,7 @@ footer {
       ". gallery ."
       "footer footer footer";
 
-    gap: 1fr;
+    gap: 2fr;
     justify-items: stretch;
   }
 
@@ -277,9 +321,10 @@ footer {
 
   .gallery {
     display: grid;
-    grid-template-columns: auto;
+    grid-template-columns: 100%;
     grid-template-rows: auto auto auto auto;
     row-gap: 2rem;
+    column-gap: 0;
 
     margin: 0rem;
     background-color: rgb(0, 0, 0);
@@ -294,6 +339,8 @@ footer {
     grid-area: footer;
     background-color: grey;
     grid-template-columns: 100fr;
+    border: none;
+    margin: 0;
   }
 
   .footer_content {
@@ -321,5 +368,44 @@ footer {
   #footer_nav {
     grid-column: 2;
     grid-row: 1;
+  }
+
+  /*
+Checkout media queries
+*/
+
+  .main_checkout {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 10% auto 10%;
+    grid-template-rows: auto auto auto;
+
+    grid-template-areas:
+      " header header header "
+      ". gallery_checkout ."
+      " footer footer footer ";
+
+    margin: 0;
+    row-gap: 8rem;
+    justify-items: center;
+  }
+
+  .gallery_checkout {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0rem;
+    background-color: rgb(0, 0, 0);
+    grid-area: gallery_checkout;
+    gap: 2rem;
+  }
+
+  .cardLarge {
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    padding-bottom: 0.05em;
+
+    max-width: 100%;
+    object-fit: cover;
   }
 }
